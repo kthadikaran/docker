@@ -1,0 +1,28 @@
+ Pulling Debian Linux image from Docker repository
+$ docker pull debian:jessie
+
+Running a container using the images you just pulled
+$ docker images
+
+$ docker run -ti 040bf8e08425 
+
+Installing "apache2" Debian package on your container
+
+root@e4c7575c5a4d:/# apt-get -y update
+
+root@e4c7575c5a4d:/# apt-get -y install apache2
+
+Commiting the changes and tagging new image
+
+$docker commit 040bf8e08425
+
+$ docker images
+
+Tag your new image, using new IMAGE ID:
+
+$ docker tag 555ee9e0c2ee debian-apache:v1
+
+$ docker images
+
+Running your own Apache container
+$ docker run -p 8080:80 debian-apache:v1 /usr/sbin/apache2ctl -D FOREGROUND
