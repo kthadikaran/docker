@@ -1,0 +1,15 @@
+Docker Images Commands
+
+Show images
+sudo docker images
+
+Specifying a Variant
+$ sudo docker run -t -i ubuntu:14.04 /bin/bash
+
+Pull an Image
+$ sudo docker pull debian
+
+
+
+
+
