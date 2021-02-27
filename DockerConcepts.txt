@@ -314,6 +314,8 @@ Also you can use below command to remove all the docker container.
 	#docker rm -f $(docker ps -a -q)
 
 
+#docker run --name dockerccon001-p 2525:22 -p 3535:80 -v /sys/fs/cgroup:/sys/fs/cgroup:ro --privileged -d centos8_systemdssh:v1
+
 	
 Docker Machine Commands:
 
