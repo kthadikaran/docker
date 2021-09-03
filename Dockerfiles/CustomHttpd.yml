@@ -1,1 +1,19 @@
 
+FROM centos:latest
+MAINTAINER  "kthadikaran" kthadikaran@gmail.com
+RUN yum -y update; yum clean all
+RUN yum -y install httpd
+WORKDIR /var/www/nuagetechno/html
+WORKDIR /var/www/nuagetechno/log
+CMD ["chown", "-R", "apache:apache", "/var/www/nuagetechno/html"]
+CMD ["chown", "-R", "755", "/var/www"]
+COPY index.html /var/www/nuagetechno/html
+WORKDIR /etc/httpd/sites-available
+WORKDIR /etc/httpd/sites-enabled
+RUN echo "IncludeOptional sites-enabled/*.conf" >> /etc/httpd/conf/httpd.conf
+RUN echo "ServerName 127.0.0.1" >>  /etc/httpd/conf/httpd.conf
+WORKDIR /etc/httpd/sites-available/
+COPY nuagetechno.conf  /etc/httpd/sites-available/
+RUN  ln -s /etc/httpd/sites-available/nuagetechno.conf /etc/httpd/sites-enabled/nuagetechno.conf
+EXPOSE 80
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
