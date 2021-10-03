@@ -1,0 +1,4 @@
+FROM centos:latest
+MAINTAINER  "kthadikaran" kthadikaran@gmail.com
+RUN yum -y update; yum clean all
+WORKDIR /usr/src/livonlin
