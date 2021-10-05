@@ -245,6 +245,7 @@ xii. Save the changes in container
 xiii. Container port mapping
  
 	#docker run -p 8080:8080 image_id
+	docker run -dit -p 104503:443 --name nuagewebserver01 httpdvhostssl:v1
  
 Xiv Dangling commands
 
