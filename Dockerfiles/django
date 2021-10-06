@@ -1,4 +1,18 @@
+#base image
 FROM centos:latest
 MAINTAINER  "kthadikaran" kthadikaran@gmail.com
-RUN yum -y update; yum clean all
+RUN yum update -y; yum clean all
+RUN yum install python3 -y
+RUN yum install python3-pip -y
+RUN yum install virtualenv -y
 WORKDIR /usr/src/livonlin
+COPY requirements.txt /usr/src/livonlin
+RUN cd /usr/src/livonlin
+RUN python3 -m virtualenv livonlin
+RUN source livonlin/bin/activate
+RUN pip3 install -r requirements.txt
+RUN django-admin startproject livonlinpro .
+RUN cd livonlin
+RUN python3 manage.py startapp livonlinapp
+EXPOSE 8000
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
