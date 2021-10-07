@@ -4,10 +4,9 @@ MAINTAINER  "kthadikaran" kthadikaran@gmail.com
 RUN yum update -y; yum clean all
 RUN yum install python3 -y
 RUN yum install python3-pip -y
-RUN yum install virtualenv -y
 WORKDIR /usr/src/livonlin
 RUN cd /usr/src/livonlin
-RUN python3 -m virtualenv .
+RUN python3 -m venv .
 RUN source bin/activate
 COPY requirements.txt /usr/src
 RUN pip3 install -r /usr/src/requirements.txt
