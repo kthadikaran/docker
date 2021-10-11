@@ -1,9 +1,10 @@
 # Docker
 
-Docker:
+## Docker:
+Docker is an open platform for developing, shipping, and running the applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly.  
 
-Docker is a computer program that performs operating system level virtualization also known as containerization.
-You can deploy and run distributed applications without launching a entire virtual machine for each application.
+You can manage your infrastructure in the same way you manage your applications by taking advantages of docker methodlogies for shipping, testing and deploying you can significantly reduce the delay between writing code and running it in production.
+
 
 Why Docker:
 
