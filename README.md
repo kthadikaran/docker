@@ -168,6 +168,9 @@ Setup docker repository
 Install docker community edition
 
 	#yum install -y docker-ce docker-ce-cli containerd.io
+	#systemctl start docker
+	#systemctl enable docker
+	#systemctl status docker
 
   
 ## Docker Swarm
